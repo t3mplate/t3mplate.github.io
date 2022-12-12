@@ -1,0 +1,795 @@
+@font-face {
+    font-family: "RanyRegular";
+    src: url(/font/Rany/Rany.otf);
+}
+@font-face {
+    font-family: "RanyBold";
+    src: url(/font/Rany/Rany-Bold.otf);
+}
+@font-face {
+    font-family: "RanyLight";
+    src: url(/font/Rany/Rany-Light.otf);
+}
+:root {
+    --white:#f7f7f7;
+    --black:#0e0e0e;
+    --gray: gray;
+    --pink: #D9A3A3;
+    --dark-gray: #424242;
+    --light-gray: #c0c0c0;
+    --deep-pink: #8D3535;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "RanyLight";
+}
+#main_banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://images.wallpaperscraft.ru/image/single/devushka_shliapa_chb_132197_1920x1080.jpg");
+    background-size: cover; /*масштабирует фоновое изображение по ширине/высоте блока*/
+    position: relative;
+    overflow: hidden;
+}
+#main_navbar {
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+#main_navbar img {
+    width: 30px;
+    height: 30px;
+    padding-top: 10px;
+}
+.logo {
+    width: 100px;
+    color:var(--white);
+    font-family: "RanyLight";
+    font-size: 2.7vw;
+}
+#main_navbar nav {
+    flex:1;
+    text-align: right;;
+}
+#main_navbar nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+#main_navbar nav ul li {
+    display: inline-block;
+    margin-right: 40px;
+}
+#main_navbar a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1vw;
+}
+#main_navbar a:hover {
+    border-bottom: 1px solid var(--white);
+}
+#main_navbar button:hover a {
+    border-bottom: none;
+    color: var(--black);
+}
+button {
+    color: var(--white);
+    padding: 5px 25px;
+    padding-bottom: 10px;
+    background: transparent;
+    font-family: "RanyLight";
+    font-size: 1.5vw;
+    border: 1px solid --white;
+    outline: none;
+    transition: background-color 1000ms;
+    cursor: pointer;
+}
+button a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5vw;
+}
+button:hover {
+    background: var(--white);
+}
+button:hover a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: none;
+}
+.content {
+    width: 80vw;
+    font-family: "RanyLight";
+    font-size: 1.5vw;
+    text-align: center;
+    color: var(--white);
+    position: absolute;
+    top:50%;
+    left:10vw;
+    transform: translateY(-50%);
+    line-height: 10vh; /*3em*/
+    display: block;
+}
+.foot {
+    width: 100vw;
+    height: 50px;
+    background: transparent;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+#main_banner .foot {
+    width: 100vw;
+    height: 50px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.social_links img, .useful_links img{
+        width: 40px;
+        margin: 5px auto;
+        cursor: pointer;
+}
+.social_links, .useful_links {
+    margin: 0 5.7vw;
+}
+#petals{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+    z-index: 1;
+}
+#petals img {
+    width: 40px;
+    animation: petal 7s linear infinite; /*animation-name, a-duration, a-timig-function a-iteration-count(бесконечно)*/
+}
+@keyframes petal {
+    0% {
+        transform: translateY(0); /*Сдвигает элемент относительно его исходного расположения на заданное значение по вертикали.*/
+        opacity: 0; /*Определяет уровень прозрачности элемента*/
+    }
+    50% {
+        opacity: 0.7;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-80vh); 
+        opacity: 0; 
+    }
+}
+#petals img:nth-child(1) {
+    width: 25px;
+    animation-delay: 2s; /*oпределяет время задержки перед стартом анимации*/
+}
+#petals img:nth-child(2) {
+    animation-delay: 1s; 
+}
+#petals img:nth-child(3) {
+    width: 25px;
+    animation-delay: 3s;
+}
+#petals img:nth-child(4) {
+    animation-delay: 4.5s; 
+}
+#petals img:nth-child(5) {
+    animation-delay: 3s; 
+}
+#petals img:nth-child(6) {
+    width: 20px;
+    animation-delay: 6s; 
+}
+#petals img:nth-child(7) {
+    width: 35px;
+    animation-delay: 7s; 
+}
+.menu-icon {
+    width: 20px;
+    margin-left: 20px;
+    display: none;
+}
+/*--------all products page----------*/
+#background {
+    padding-top: 35px;
+    padding-left: 25px;
+    background: linear-gradient(var(--black), var(--pink), var(--black));
+}
+.categories {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.small-container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 80px;
+    padding-right: 80px;    
+}
+.small-container .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: var(--white);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+.small-container .card:hover {
+    height: 420px;
+}
+.small-container .card .card-imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    /*box-shadow: 0 5px 20px rgba(0,0,0,0.2);*/
+}
+.small-container .card .card-imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+.small-container .card .card-imgBx h2 {
+    padding: 10px 15px;
+    text-align: center;
+    color: var(--dark-gray);
+}
+.small-container .card .card-content{
+    position: relative;
+    margin-top: -90px;
+    padding: 10px 15px;
+    text-align: center;
+    color: var(--dark-gray);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.small-container .card:hover .card-content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.small-container .card .card-content p {
+    margin: 10px 0;
+}
+.small-container .card  .card-price {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: var(--dark-gray);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.small-container .card:hover  .card-price {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.small-container .card .card-price span {
+    position: absolute;
+    bottom: 20px;
+    left:20%;
+    color: var(--white);
+    transform: translateX(-20%);
+    background: var(--gray);
+    padding: 5px 10px;
+}
+.small-container .card .card-price a {
+    position: absolute;
+    bottom: 20px;
+    right:20%;
+    transform: translateX(20%);
+    text-decoration: none;
+    color: var(--dark-gray);
+    background: var(--pink);
+    padding: 5px 10px;
+}
+/*--------all products page----------*/  /*---------testimonial-------------*/
+.heading {
+    color: var(--white);
+    font-size: 1.7vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.heading hr {
+    color: var(--white);
+    size: 6;
+}
+.sort {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px 20%;
+    margin-top: 235px;
+}
+.sort h2 {
+    color: var(--white);
+}
+select {
+    border: 1px solid var(--dark-gray);
+    padding: 7px;
+}
+select:focus {
+    outline: none; /*чтобы при выборе не менялась граница света*/
+}
+.testimonial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+.small-container-2 {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;    
+}
+.testimonial .small-container-2 .testimonial-card {
+    position: relative;
+    max-width: 220px;
+    height: 280px;
+    background: var(--dark-gray);
+    color: var(--white);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.8);
+    transition: 0.3s ease-in-out;
+}
+.testimonial .small-container-2 .testimonial-card:hover {
+    transform: translateY(-10px);
+}
+.testimonial .small-container-2 .testimonial-card img {
+    position: absolute;
+    bottom: 35px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.testimonial .small-container-2 .testimonial-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 40%;
+    transform: translateX(-40%);
+}
+.testimonial .small-container-2 .testimonial-card p{
+    margin: 10px 0;
+}
+.testimonial .small-container-2 .testimonial-card img {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+/*--------all products page----------*/ /*----------selector page------------*/
+.page-btn {
+    margin: 0 23vw 80px;
+}
+.page-btn span {
+    display: inline-block;
+    border: 1px solid var(--dark-gray);
+    color: var(--dark-gray);
+    background-color: var(--white);
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.8);
+}
+.page-btn span:hover {
+    background-color: var(--light-gray);
+}
+
+/*---------------cart items detals-----------------*/
+.cart-contenier {
+    max-width: 1200px;
+    margin: 235px auto;
+}
+.cart-contenier > h2 {
+    padding: 20px 0;
+    color: var(--white);
+}
+.cart {
+    display: flex;
+}
+.products {
+    flex: 0.75;
+}
+.product {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid var(--light-gray);
+    margin-bottom: 20px;
+    background-color: var(--white);
+    color: var(--dark-gray);
+}
+.product:hover {
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transform: scale(1.01);
+} 
+.product > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /*Смещаемый контент меняет свой размер таким образом, чтобы сохранять свои пропорции  */
+}
+.product > img:hover {
+    transform: scale(1.04);
+}
+.product-info {
+    padding: 20px;
+    width: 100%;
+    position: relative;
+}
+.product-name, .product-price  {
+    margin-bottom: 20px;
+}
+.product-remove {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    background-color:var(--light-gray);
+    color: var(--dark-gray);
+    cursor: pointer;
+}
+.product-remove:hover {
+    background-color: var(--deep-pink);
+    color: var(--white);
+    font-weight: 600;
+    border: 1px solid var(--light-gray);
+}
+.product-quantity > input {
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+}
+.fa {
+    margin-right: 1px;
+}
+.cart-total {
+    flex: 0.25;
+    margin-left: 20px;
+    padding: 20px;
+    height: 240px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--dark-gray);
+}
+.cart-total p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.cart-total a {
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--pink);
+    color: var(--dark-gray);
+    text-decoration: none;
+}
+.cart-total a:hover {
+    transform: scale(1.05);
+}
+/*---------------------------account page------------------------------------*/
+.account-page {
+    margin: 130px 0;
+    background: transparent;
+    color: var();
+}
+.form-contanier {
+    background: transparent;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    border: 1px solid var(--white);
+    overflow: hidden;
+}
+.form-contanier span {
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--white);
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+.form-btn {
+    display: inline-block;
+}
+.form-contanier form {
+    max-width: 270px;
+    padding: 0 20px;
+    position: absolute;
+    top: 100px;
+    transition: transform 1s;
+}
+form input {
+    width: 90%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid var(--white);
+}
+form .btn {
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 0;
+    margin-top: 100px;
+}
+form button {
+    font-size: 16px;
+}
+form button:hover {
+    color: var(--black);
+    background-color: var(--white);
+}
+#login-form {
+    left: -300px;
+}
+#register-form {
+    left: 0;
+}
+form a {
+    font-size: 12px;
+    color: var(--light-gray);
+}
+form a:hover {
+    color: var(--deep-pink);
+}
+#indicator {
+    width: 100px;
+    border: none;
+    background: var(--white);
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(140px);
+    transition: transform 1s;
+}
+/*----------------------------about---------------------------------*/
+.about {
+   margin: 235px 80px;
+}
+.head {
+    text-align: center;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    padding-bottom: 50px;
+    font-size: 2.5vw;
+}
+.head span {
+    color: var(--white);
+    text-transform: uppercase;
+}
+.flex-container1 {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+    background-color: var(--black);
+    color: var(--light-gray);
+}
+.flex-container1:hover {
+    transform: scale(1.05);
+}
+.flex-container1 .about-image {
+    flex: 1 1 20%;
+    align-self: center;
+    width: 100%;
+    padding: 10px 10px;
+}
+.flex-container1 .about-image img {
+    width: 300px;
+    height: 200px;
+}
+.flex-container1 .about-info {
+    padding: 10px 5px;
+}
+.flex-container1 .about-info h3 {
+    margin: 10px 0;
+}
+.flex-container1 .about-info p {
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.flex-container1 .about-info a {
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--dark-gray);
+    background-color: var(--pink);
+    text-decoration: none;
+    color: var(--dark-gray);
+}
+.flex-container1 .about-info a:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 800px)  {
+    .logo {
+        width: 100px;
+        color:var(--white);
+        font-family: "RanyLight";
+        font-size: 20px;
+    }
+    #main_navbar nav ul {
+        position: absolute;
+        top: 120px;
+        left: 0;
+        background: transparent;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    #main_navbar nav ul li {
+        display: block;
+        margin-right: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 80px;
+        padding-right: 5px;
+        padding: 6px;
+        border: 1px solid var(--white);
+        transition: background-color 1000ms;
+    }
+    #main_navbar nav ul li > * {
+        font-size: 14px;
+    }
+    #main_navbar nav ul li button >* {
+        font-size: 14px;
+    }
+    #main_navbar a:hover {
+        border-bottom: none;
+    }    
+    #main_navbar button {
+        all: unset;
+        font-family: "RanyLight";
+        color: var(--white);
+        font-size: 16px;
+    }
+    #main_navbar li:hover{
+        background-color: var(--white);
+        cursor: pointer;
+    }
+    #main_navbar li:hover  * {
+        color: var(--black);
+    }
+    .content {
+        text-align: center;
+        display: flex;
+        width: 80vw;
+        flex-direction: column;
+        margin-left: 3vw;
+        flex-wrap: wrap;
+    }
+    .content  * {
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 1em;
+    }
+    .content > button {
+        color: var(--white);
+        padding: 10px 25px;
+        background: transparent;
+        font-family: "RanyLight";
+        font-size: 14px;
+        border: 1px solid --white;
+        outline: none;
+       
+    }
+    .content > button:hover {
+        background: var(--white);
+        color: var(--black);
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+    .heading {
+        font-size: 20px;
+    }
+    .cart {
+        flex-direction: column;
+        font-size: 14px;
+    }
+    .cart-total {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .cart-total span {
+        font-size: 14px;
+    }
+    .remove {
+        display: none;
+    }
+    .product > img {
+        width: 100px;
+        height: 100px;
+    }
+    .flex-container1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-around;
+    }
+    .flex-container1 .about-image img {
+        width: 215px;
+        height: 150px;
+    }
+    .head {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #main_navbar a {
+        font-size: 1.5vw;
+    }
+    .content {
+        font-size: 1.7vw;
+    }
+    .small-container-2 {
+        max-width: 120%;
+        min-height: 200px; 
+        display: flex;  
+        margin-top: 40px;
+        margin-bottom: 100px;
+        overflow-x: auto;
+    }
+    .testimonial .small-container-2 .testimonial-card {
+        min-width: 200px;
+        margin: 5px;
+    }
+    .testimonial .small-container-2 .testimonial-card::-webkit-scrollbar {
+        display: none; /*спрятать полосу прокрутки. Для webkit-браузеров (Chrome и Safari) */
+    }
+    .page-btn {
+        margin: 0 15vw 80px;
+    }
+    .cart-contenier {
+        max-width: 95%;
+    }
+}
