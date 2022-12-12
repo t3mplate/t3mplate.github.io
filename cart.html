@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style-parfume.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - cSens</title>
+</head>
+<link rel="shortcut icon" href="image/rosa.png" type="image/jpeg">
+<body>
+    <div id="background">
+        <div id="main_navbar">
+            <div class="logo">&sigmaf;Sens</div>
+            <nav>
+                <ul id="menu-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button type="button"><a href="account.html">Sign In</a></button></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="image/cart.png" style="cursor: pointer;"></a>
+            <img src="image/menu-white.png" class="menu-icon" 
+            onclick="menutoggle()"> 
+        </div>
+
+        <!----------------cart items detals------------------>
+        <div class="cart-contenier">
+            <h2>Shopping Cart</h2>
+            <div class="cart">
+                <div class="products">
+                    <div class="product">
+                        <img src="image/flower-1.jpeg">
+                        <div class="product-info">
+                            <h3 class="product-name">Flower pargume - Mon Paris Eau De Parfum</h3>
+                            <h4 class="product-price">Price: $70.00</h4>
+                            <p class="product-quantity">Qnt: <input type="number" min="1" value="1"></p>
+                            <p class="product-remove">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="image/citrus-1.jpeg">
+                        <div class="product-info">
+                            <h3 class="product-name">Citrus pargume - Mon Paris Parfum Floral</h3>
+                            <h4 class="product-price">Price: $45.00</h4>
+                            <p class="product-quantity">Qnt: <input type="number" min="1" value="1"></p>
+                            <p class="product-remove">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <p>
+                        <span>Total Price</span>
+                        <span>$115.00</span>
+                    </p>
+                    <p>
+                        <span>Number of Items</span>
+                        <span>2</span>
+                    </p>
+                    <p>
+                        <span>Delivery</span>
+                        <span>free</span>
+                    </p>
+                    <a href="#">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot">
+            <div class="social_links">
+                <img src="image/fb.png">
+                <img src="image/ig.png">
+                <img src="image/tw.png">
+            </div>
+            <div class="useful_links">
+                <img src="image/share.png">
+                <img src="image/info.png">
+            </div>
+        </div>
+    </div>
+     <!--js for toggle menu-->
+     <script>
+        var menuList = document.getElementById('menu-list');
+
+        menuList.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if(menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "200px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
